@@ -16,7 +16,7 @@ default_trigger: "snowboy"
 triggers:
   - snowboy:
       keywords:
-        - file_path: "trigger/kalliope-FR-162samples.pmdl"
+        - file_path: "/etc/kalliope/trigger/kalliope-FR-162samples.pmdl"
 
 # ---------------------------
 # Speech to text
@@ -35,7 +35,7 @@ default_speech_to_text: "vosk"
 # - cmusphinx (must be installed first)
 speech_to_text:
   - vosk:
-      language: "model-fr"
+      language: "/etc/kalliope/resources/stt/vosk/model-fr"
       log_level: -1
   - google:
       language: "fr-FR"
@@ -139,10 +139,10 @@ rest_api:
 #   - signal
 # ---------------------------
 resource_directory:
-  neuron: "resources/neurons"
-  stt: "resources/stt"
-  tts: "resources/tts"
-  signal: "resources/signal"
+  neuron: "/etc/kalliope/resources/neurons"
+  stt: "/etc/kalliope/resources/stt"
+  tts: "/etc/kalliope/resources/tts"
+  signal: "/etc/kalliope/resources/signal"
 #  trigger: "resources/trigger"
 #
 
