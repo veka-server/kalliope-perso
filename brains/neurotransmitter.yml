@@ -3,6 +3,9 @@
     signals:
       - order: "pose moi une question"
       - order: "pose-moi une question"
+      - order: "pose une question"
+      - order: "pose moins une question"
+      - order: "pas moins une question"
     neurons:
       - say:
           message: "aimez vous les frites?"
@@ -10,10 +13,14 @@
           from_answer_link:
             - synapse: "synapse2"
               answers:
+                - "oui"
+                - "biensur"
+                - "bien sûr"
                 - "absolument"
                 - "peut-être"
             - synapse: "synapse3"
               answers:
+                - "non"
                 - "pas du tout"
           default: "synapse4"
 
