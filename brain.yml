@@ -4,6 +4,7 @@
     - brains/say.yml
     - brains/systemdate.yml
     - brains/neurotransmitter.yml
+    - brains/meteo.yml
 
 - name: "order-not-found-synapse"
   signals: []

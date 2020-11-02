@@ -1,0 +1,60 @@
+---
+  - name: "meteo"
+    signals:
+      - order:
+          text: "Quel temps fait-il"
+          matching-type: 'ordered-strict'
+      - order:
+          text: "Quelque temps fait-il"
+          matching-type: 'ordered-strict'
+    neurons:
+      - openweathermap:
+          api_key: "5c9acde1618db89813bf5444ec492396"
+          lang: "fr"
+          temp_unit: "celsius"
+          location : "Vire"
+          country: "FR"
+          say_template:
+            - "Aujourd'hui à {{ location }}, le temps est {{ current['weather_status'] }} avec une température de {{ current['temperature'] }} degré"
+
+  - name: "meteo-location"
+    signals:
+      - order:
+          text: "Quel temps fait-il à {{ location }}"
+          matching-type: 'ordered-strict'
+      - order:
+          text: "Quelque temps fait-il à {{ location }}"
+          matching-type: 'ordered-strict'
+    neurons:
+      - openweathermap:
+          api_key: "5c9acde1618db89813bf5444ec492396"
+          lang: "fr"
+          temp_unit: "celsius"
+          location: "{{ location }}"
+          say_template:
+            - "Aujourd'hui à {{ location }}, le temps est {{ current['weather_status'] }} avec une température de {{ current['temperature'] }} degré"
+
+  - name: "meteo-par-jour"
+    signals:
+      - order:
+          text: "Quel temps fera team {{ day }}"
+          matching-type: 'ordered-strict'
+      - order:
+          text: "tel temps fera a-t-il {{ day }}"
+          matching-type: 'ordered-strict'
+      - order:
+          text: "tel temps fera-t-il {{ day }}"
+          matching-type: 'ordered-strict'
+      - order:
+          text: "Quel temps fera-t-il {{ day }}"
+          matching-type: 'ordered-strict'
+      - order:
+          text: "Quel temps faudra-t-il {{ day }}"
+          matching-type: 'ordered-strict'
+    neurons:
+      - openweathermap:
+          api_key: "5c9acde1618db89813bf5444ec492396"
+          lang: "fr"
+          location : "Vire"
+          day: "{{ day }}"
+          file_template: "templates/daily_weather.j2"

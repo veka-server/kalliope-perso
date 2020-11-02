@@ -1,0 +1,67 @@
+{% set day_of_week = {
+    "aujourd'hui": "today",
+    "demain": "tomorrow",
+    "lundi": "monday",
+    "mardi": "tuesday",
+    "mercredi": "wednesday",
+    "jeudi": "thursday",
+    "vendredi": "friday",
+    "samedi": "saturday",
+    "dimanche": "sunday"
+    }[day] | default("")
+-%}
+
+
+{% if "tomorrow" == day_of_week  %}
+    {{ day }} le matin sera {{ tomorrow['07:00']['weather_status'] }} avec une température de {{ tomorrow['07:00']['temperature'] }} degré et l'aprés-midi sera {{ tomorrow['16:00']['weather_status'] }} avec une température de {{ tomorrow['16:00']['temperature'] }} degré
+
+{% elif "monday" == day_of_week  %}
+    {% if monday['07:00']['weather_status'] %}
+        {{ day }} le matin sera {{ monday['07:00']['weather_status'] }} avec une température de {{ monday['07:00']['temperature'] }} degré et l'aprés-midi sera {{ monday['16:00']['weather_status'] }} avec une température de {{ monday['16:00']['temperature'] }} degré
+    {% else %}
+        Je suis désolé mais je n'ai pas trouver la météo de {{ day }}
+    {% endif %}
+
+{% elif "tuesday" == day_of_week  %}
+    {% if tuesday['07:00']['weather_status'] %}
+        {{ day }} le matin sera {{ tuesday['07:00']['weather_status'] }} avec une température de {{ tuesday['07:00']['temperature'] }} degré et l'aprés-midi sera {{ tuesday['16:00']['weather_status'] }} avec une température de {{ tuesday['16:00']['temperature'] }} degré
+    {% else %}
+        Je suis désolé mais je n'ai pas trouver la météo de {{ day }}
+    {% endif %}
+
+{% elif "wednesday" == day_of_week  %}
+    {% if wednesday['07:00']['weather_status'] %}
+        {{ day }} le matin sera {{ wednesday['07:00']['weather_status'] }} avec une température de {{ wednesday['07:00']['temperature'] }} degré et l'aprés-midi sera {{ wednesday['16:00']['weather_status'] }} avec une température de {{ wednesday['16:00']['temperature'] }} degré
+    {% else %}
+        Je suis désolé mais je n'ai pas trouver la météo de {{ day }}
+    {% endif %}
+
+{% elif "thursday" == day_of_week %}
+    {% if thursday['07:00']['weather_status'] %}
+        {{ day }} le matin sera {{ thursday['07:00']['weather_status'] }} avec une température de {{ thursday['07:00']['temperature'] }} degré et l'aprés-midi sera {{ thursday['16:00']['weather_status'] }} avec une température de {{ thursday['16:00']['temperature'] }} degré
+    {% else %}
+        Je suis désolé mais je n'ai pas trouver la météo de {{ day }}
+    {% endif %}
+
+{% elif "friday" == day_of_week  %}
+    {% if friday['07:00']['weather_status'] %}
+        {{ day }} le matin sera {{ friday['07:00']['weather_status'] }} avec une température de {{ friday['07:00']['temperature'] }} degré et l'aprés-midi sera {{ friday['16:00']['weather_status'] }} avec une température de {{ friday['16:00']['temperature'] }} degré
+    {% else %}
+        Je suis désolé mais je n'ai pas trouver la météo de {{ day }}
+    {% endif %}
+
+{% elif "saturday" == day_of_week  %}
+    {% if saturday['07:00']['weather_status'] %}
+        {{ day }} le matin sera {{ saturday['07:00']['weather_status'] }} avec une température de {{ saturday['07:00']['temperature'] }} degré et l'aprés-midi sera {{ saturday['16:00']['weather_status'] }} avec une température de {{ saturday['16:00']['temperature'] }} degré
+    {% else %}
+        Je suis désolé mais je n'ai pas trouver la météo de {{ day }}
+    {% endif %}
+
+{% elif "sunday" == day_of_week  %}
+    {% if sunday['07:00']['weather_status'] %}
+        {{ day }} le matin sera {{ sunday['07:00']['weather_status'] }} avec une température de {{ sunday['07:00']['temperature'] }} degré et l'aprés-midi sera {{ sunday['16:00']['weather_status'] }} avec une température de {{ sunday['16:00']['temperature'] }} degré
+    {% else %}
+        Je suis désolé mais je n'ai pas trouver la météo de {{ day }}
+    {% endif %}
+
+{% endif %}
