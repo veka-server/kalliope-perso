@@ -5,6 +5,7 @@
     - brains/systemdate.yml
     - brains/neurotransmitter.yml
     - brains/meteo.yml
+    - brains/domoka.yml
 
 - name: "order-not-found-synapse"
   signals: []
