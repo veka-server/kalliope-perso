@@ -31,6 +31,7 @@
             - "quelle est"
             - "quel est"
             - "donne moi"
+          answer_information: "La température {{ room }} et de ## temperature ## degré"
           action_unknown:
             - "Je n'ai pas compris votre commande"
 
